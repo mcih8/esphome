@@ -1,12 +1,9 @@
-#pragma once
+#include "status_check.h"
+#include "esphome/core/log.h"
 
-#include "esphome.h"
+static const char *TAG = "status_check";
 
-class StatusCheck : public Component {
- public:
- 
- 
-         void loop() override {
+void StatusCheck::loop() {
           // Sprawdź, które sensory są włączone
           int active_sensors1 = 0;
           if (id(Wlaczniki_1_A0).state) active_sensors1++;
@@ -78,6 +75,5 @@ class StatusCheck : public Component {
             delay(500);
           }
           
-        }
-};
+}
 
