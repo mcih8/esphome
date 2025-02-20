@@ -4,6 +4,7 @@
 static const char *TAG = "status_check";
 
 void StatusCheck::loop() {
+          ESP_LOGI("MCP23017", "Status check starting...");
           // Sprawdź, które sensory są włączone
           int active_sensors1 = 0;
           if (id(Wlaczniki_1_A0).state) active_sensors1++;
